@@ -10,6 +10,7 @@ body {
     color: #ffffff;  /* White text */
     background-color: #000000;  /* Black background */
     padding-top: 0px !important;
+    margin: 50px auto;
 }
 
 /* Headings (Jost SemiBold) */
@@ -181,4 +182,34 @@ p, a {
   cursor: url("https://ani.cursors-4u.net/cursors/cur-13/cur1157.ani"), 
           url("https://ani.cursors-4u.net/cursors/cur-13/cur1157.png"), 
           auto !important;
+}
+.textcontainer {
+  max-width: 800px; /* Keeps the content readable */
+  margin: 50px auto; /* More space on the left and right */
+  padding: 20px;
+}
+/* Container styling */
+.hover-text {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Adjust as needed */
+  max-width: 600px; /* Ensures consistency */
+}
+
+/* Image styling */
+.hover-image {
+  display: none; /* Initially hidden */
+  width: 100%;
+  max-width: 500px; /* Adjust image size */
+  height: auto;
+}
+
+/* Hide text and show image on hover */
+.hover-text:hover h3,
+.hover-text:hover p {
+  display: none; /* Hide text when hovering */
+}
+
+.hover-text:hover .hover-image {
+  display: block; /* Show image when hovering */
 }

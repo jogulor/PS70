@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <title>PS70: Intro to Digital Fabrication </title>
+<head>
+  <title>PS70: Intro to Digital Fabrication</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="finallogo.png">
-  
-  
-    <nav class="navbar navbar-expand-sm navbar-dark">
-      <div class="container-fluid">
-          <!-- Centered Logo -->
-          <div class="logo-container">
-              <a href="../index.html">
-                  <img src="finallogo.png" alt="Logo" class="nav-logo">
-              </a>
-          </div>
-  
-          <!-- About Button (Image) on the Right -->
-          <div class="about-button-container">
-              <a href="../about.html">
-                  <img src="AboutButton2.png" alt="About" class="about-button">
-              </a>
-          </div>
-      </div>
-  </nav>
-  
-
+  <link href="../style.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="finallogo.png">
+</head>
 <body>
-<xmp style="display:none;">
+
+  <nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+        <!-- Centered Logo -->
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="finallogo.png" alt="Logo" class="nav-logo">
+            </a>
+        </div>
+
+        <!-- About Button (Image) on the Right -->
+        <div class="about-button-container">
+            <a href="../about.html">
+                <img src="AboutButton2.png" alt="About" class="about-button">
+            </a>
+        </div>
+    </div>
+  </nav>
+
+  <div class="textcontainer">
+    <p class="margin"></p>
+    <center><h1 id="typewriter"></h1></center>
+    <p class="margin"></p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const text = "Week 1: Intro, Website, Project Ideas!";
+        let index = 0;
+        const speed = 100; // Typing speed in milliseconds
+
+        function type() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, speed);
+            }
+        }
+
+        type();
+    });
+  </script>
+
 <div class="textcontainer">
-<p class="margin">   </p>
+  <p class="margin">   </p>
+  <h2>Potential projects</h2>
 
-<h3>Week 1: Intro</h3>
+   <p><i>Hover over each description to see some visual inspiration.</i></p>
 
-<p class="margin">   </p>
-<div class="flexrow">
-  <a id="btn" href="./temp.zip" download>Test Download Button
-  </a>
+  <h4>Tattoo Stencil Machine</h4>
+
+  <div class="hover-text">
+    <p>
+        I recently got my first tattoo! During a tattoo session, the artist usually must take their client’s inspiration images and test the trace of the image as a tattoo, which can take a long time. Before actually drawing the tattoo, an artist must usually hand draw a stencil and print out a tattoo transfer with a stencil machine. I want to build a machine that can take an inspiration image, turn it into a stencil design digitally, and print it out on tattoo transfer paper.
+    </p>
+    <center><img src="stenciltattoo.png" style="width:300px;" alt="Stencil Tattoo Machine" class="hover-image"></center>
 </div>
-<p class="margin">   </p>
+<h4>Uniqlo-inspired Library Scanning Bin</h4>
 
-<h4>Assignment 1: Make a Box</h4>
+<div class="hover-text">
+  <p>One task of being a Library Desk Assistant is scanning books in and out. This can be a long, manual process. My mother and I shop at Uniqlo, where you put your clothing in a bin which records the price and item for you to check out. It uses RFID tags to automatically identify what's in the bin. I would love to create something similar but for Lamont Library. I could put books in a bin and scan them all out or in at once.</p>
 
-
-
-<h4>Assignment 2: Fusion 360 Tutorial</h4>
-
-
-<h4>Assignment 3: Fusion Modeling</h4>
-
-
-
-
+ <center> <img src="Scan.png" style="width:400px;" alt="Scan Uniqlo inspo" class="hover-image"></center>
+</div>
+<h4>Smart Navigation Cane</h4>
+<div class="hover-text">
+<p>Places that are busy — city streets, airport lines, college campuses, concerts — can be difficult to maneuver, and even more difficult for those with visual impairments. I want to build a cane that has navigational capabilities using haptics and audio to help guide people through large built environments.</p>
+<center> <img src="robotlol.jpg" style="width:400px;" alt="Autonomous navigation cane" class="hover-image"></center>
 
 </div>
-</xmp>
+<h4>Recycling Press</h4>
+
+<div class="hover-text">
+  <p>Every week, I take out my trash and recycle. Recycling facilities prefer that items are flattened before they are received. I want to create a low-cost, household press for recycling items or breaking down boxes. I'm am very easily by hydraulic press ASMR, so something similar but for household use would be cool.</p>
+
+ <center> <img src="press.png" style="width:300px;" alt="recycling press" class="hover-image"></center>
+</div>
+
+
+  <h2>Concepts that inspire me</h2>
+  <p>Japanese Joinery and Modular Design</p>
+  <p>Universal Design</p>
+</div>
+  <!-- Try removing strapdown.js to check for errors -->
+  <!-- <script src="../strapdown.js"></script> -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
-<script src="../strapdown.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>
