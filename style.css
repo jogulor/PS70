@@ -74,8 +74,8 @@ p, a {
     font-family: 'Jost', sans-serif;
     font-weight: 400; /* Regular */
     color: #ffffff;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 /* Button Styling */
@@ -127,4 +127,58 @@ p, a {
 
 @keyframes blink {
   50% { border-color: transparent; }
+}
+/* Main container with two sections */
+.content-container {
+  display: flex;
+  align-items: flex-start; /* Align text and images from the top */
+  gap: 50px; /* Space between text and images */
+  max-width: 1200px; /* Limit width for better layout */
+  margin: 50px auto; /* Center the container */
+  padding: 20px;
+}
+
+/* Left Text Section */
+.text-section {
+  width: 40%; /* Takes 40% of the space */
+  font-family: 'Jost', sans-serif;
+  color: #ffffff;
+}
+
+.text-section h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.text-section p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+/* Stack images vertically */
+.stacked-images {
+  display: flex;
+  flex-direction: column; /* Stack images on top of each other */
+  align-items: center; /* Center images horizontally */
+  gap: 10px; /* Adds spacing between images */
+}
+
+/* Make images responsive */
+.stacked-images img {
+  width: 100%; /* Adjust width as needed */
+  max-width: 500px; /* Set a max width for consistency */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect */
+.stacked-images img:hover {
+  opacity: 0.8;
+
+}
+/* Custom Cursor from Cursors-4u */
+* {
+  cursor: url("https://ani.cursors-4u.net/cursors/cur-13/cur1157.ani"), 
+          url("https://ani.cursors-4u.net/cursors/cur-13/cur1157.png"), 
+          auto !important;
 }
