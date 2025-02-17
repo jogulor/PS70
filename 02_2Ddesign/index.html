@@ -49,11 +49,109 @@
         type();
     });
   </script>
-
-
 </div>
+
+<div class="slider-container">
+  <button id="prevBtn" class="arrow-button">&#10094;</button>
+
+  <div class="text-slider">
+      <!-- Slide 1: Full Content -->
+      <div class="slide active">
+          <div class="textcontainer">
+              <p class="margin">   </p>
+              <h2>Part I: Designing and Creating a Toolbox</h2>
+              <br>
+              <h3> In 2D: On Fusion 360 </h3>
+              <p>I created a box inspired by the Japanese art of <i> sashimono </i>, a joinery technique that use wood joints instead of nails. The box — and furniture that uses <i> sashimono </i> — is thus able to last longer, often has stronger joints, but is also easier to take apart and transport.</p>
+              
+              <p>I was particularly inspired by this design, by <a href="https://www.lumberjocks.com/showcase/japanese-style-tool-box.125811/">@chrisinottawa</a> on the Lumberjocks website. It uses a sliding lid and tabs on its panels that fit snugly in the slots.</p>
+              
+              <center><img src="box_inspo.png" style="width:500px;" alt="Stencil Tattoo Machine"></center>
+              <br>
+              <p>I first sketched out the panels of the box and the dimensions according to a general shoebox size.</p>
+              <br>
+              <center> <img src="boxmeasurements.png" style="width:500px;" alt="Stencil Tattoo Machine"></center>
+              <br>
+              <p>Here, you can replicate the dimensions:</p>
+              <br>
+              <center>
+              <table border="1">
+                  <tr>
+                      <th>Parameter</th>
+                      <th>Value</th>
+                  </tr>
+                  <tr><td>cardboard_thickness</td><td>4 mm</td></tr>
+                  <tr><td>longsidepanel_length</td><td>330.2 mm</td></tr>
+                  <tr><td>longsidepanel_height</td><td>101.6 mm</td></tr>
+                  <tr><td>longsidepanel_cutoutsquare</td><td>4 mm</td></tr>
+                  <tr><td>longsidepanel_heightbtwn_holes</td><td>22.375 mm</td></tr>
+                  <tr><td>longsidepanel_distfromside</td><td>22.375 mm</td></tr>
+                  <tr><td>bottompanel_length</td><td>285.45 mm</td></tr>
+                  <tr><td>bottompanel_height</td><td>182.5 mm</td></tr>
+                  <tr><td>shortsidepanel_length</td><td>190.5 mm</td></tr>
+                  <tr><td>slidinglid_width</td><td>240.75 mm</td></tr>
+                  <tr><td>clampers_length</td><td>44.75 mm</td></tr>
+                  <tr><td>clampers_height</td><td>190.5 mm</td></tr>
+                  <tr><td>handles_radius</td><td>50.8 mm</td></tr>
+              </table>
+              </center>
+              <br>
+              <p>Following this, I started to enter all the dimensions into Fusion 360 and created the panels. For each panel, I created a 2D sketch of the associated rectangle and extruded it with the thickness of cardboard. For the slots on the Long Side Panel, I layered on a 2D square and extruded it through the cardboard, repeating this five more times. On the Short Side Panel, I created tabs that corresponded with the slots. Additionally, I drew “This is Joanna’s” on Procreate and turned the image into an SVG file, which vectorizes the image, allowing it to cut through panels.</p>
+              
+              <p>Here, you can see my progress.</p>
+              
+              <center> 
+                  <video width="500px" height="400px" controls>
+                      <source src="designhistory.mp4" type="video/mp4">
+                  </video> 
+              </center>
+              <br>
+              <p>As you can see from the video, I struggled with learning how to turn everything into a sketch to prepare it to be sent to Rhino. Luckily, with the help of the CAs and my peers, I simply turned each individual panel into a DXF file. That is definitely something I still need to clarify for myself.</p>
+              <br>
+              <h3> In 3D: Assembling the box </h3>
+              <br>
+              <p>I finally printed everything using the Laser Printer!</p>
+              <br>
+              <center> <img src="assemble.jpeg" style="width:500px;" alt="Stencil Tattoo Machine"></center>
+              <br>
+              <p>The cardboard, while not wood, allowed the tabs to fit perfectly in the slots.</p>
+              <br>
+              <center>
+                  <video width="500px" height="400px" controls>
+                      <source src="slot.mp4" type="video/mp4">
+                  </video>
+              </center>
+              <br>
+              <p>I assembled everything else using hot glue. I added handles onto the sliding lid and here is the final result!</p>
+              <br>
+              <center><img src="above.jpeg" style="width:300px;" alt="Stencil Tattoo Machine"></center>
+              <br>
+              <center><img src="side.jpeg" style="width:300px;" alt="Stencil Tattoo Machine" ></center>
+          </div>
+      </div>
+  </div>
+
+  <button id="nextBtn" class="arrow-button">&#10095;</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      let slides = document.querySelectorAll(".slide");
+      let currentIndex = 0;
+  
+      document.getElementById("nextBtn").addEventListener("click", function() {
+          slides[currentIndex].classList.remove("active");
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+      });
+  
+      document.getElementById("prevBtn").addEventListener("click", function() {
+          slides[currentIndex].classList.remove("active");
+          currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+          slides[currentIndex].classList.add("active");
+      });
+  });
+  </script>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
-
 </html>
