@@ -17,7 +17,8 @@ body {
 h1, h2, h3, h4, h5, h6, .nav-title {
     font-family: 'Jost', sans-serif;
     font-weight: 600; /* SemiBold */
-    color: #ffffff;
+    color: #00bd00;
+    align: left
 }
 
 /* Navbar */
@@ -214,41 +215,17 @@ p, a {
   display: block; /* Show image when hovering */
 }
 
-/* Slider Container */
-.slider-container {
+/* Slider Header - Move Arrows to the Top Center */
+.slider-header {
   display: flex;
+  justify-content: center; /* Centers the buttons */
   align-items: center;
-  justify-content: center;
-  position: relative;
-  max-width: 900px;
-  margin: auto;
-  overflow: hidden;
-  background-color: #111;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Text Slider */
-.text-slider {
-  display: flex;
+  gap: 20px; /* Space between buttons */
+  padding-bottom: 10px;
   width: 100%;
-  transition: transform 0.5s ease-in-out;
 }
 
-/* Individual Slide */
-.slide {
-  display: none;
-  flex: 0 0 100%;
-  text-align: center;
-  color: #ffffff;
-}
-
-/* Active Slide */
-.slide.active {
-  display: block;
-}
-
-/* Arrow Buttons */
+/* Ensure Buttons Stay in the Header */
 .arrow-button {
   background-color: transparent;
   color: #ffffff;
@@ -258,7 +235,62 @@ p, a {
   padding: 10px;
   transition: 0.3s;
 }
-
 .arrow-button:hover {
   opacity: 0.7;
+}
+
+/* Ensure Header is Above the Slides */
+.slider-container {
+  display: flex;
+  flex-direction: column; /* Arrange header above slides */
+  align-items: left; /* Center everything */
+  justify-content: left;
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #111;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Ensure Slides Display Correctly */
+.text-slider {
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Individual Slide */
+.slide {
+  display: none;
+  flex: 0 0 100%;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* Active Slide */
+.slide.active {
+  display: block;
+}
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #ffffff;
+  transform: scale(1.2);
 }
