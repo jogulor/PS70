@@ -50,7 +50,134 @@
     });
   </script>
 
+<div class="slider-container">
+  <div class="slider-header">
+    <button id="prevBtn" class="arrow-button">&#10094;</button>
+    
+    <!-- Dots Container -->
+    <div class="slider-dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+    <button id="nextBtn" class="arrow-button">&#10095;</button>
+  </div>
+  <div class="text-slider">
+      <div class="slide active">
+          <div class="textcontainer">
+            <h2>Part 1: Capacitive Sensor, Petal Pressed Signaler</h2>
+            I wanted to create a capacitive sensor that when pressed could turn on an LED, signalling that there was a change in pressure. This could be used for a step petal, if a petal is pressed a light flickers off, creating a visual signal that the petal has been pressed.
+            <br>
+            <br>
+           <center><img src="squeeze1.gif" style="width:750px"></center> 
+           <br>
+           Here, you can see that the sensor is printing an updated description of the change in voltage in arbritrary numbers. We can see that when the sensor is touched, the arbritrary updated voltage becomes very small and usually negative. Then, when the voltage drop is large, the LED will turn off temporarily.
+           <hr>
+           This was the code I used in Arduino IDE: 
+           <figure>
+            <pre>
+              <code>
+long result;   // Variable for the result of the tx_rx measurement.
+int analog_pin = D0;
+int tx_pin = D9;
+int led_pin = D4;  // LED positive at D4
+                
+const int THRESHOLD = 5000;  // Adjust this value based on sensor response
+                
+void setup() {
+  pinMode(tx_pin, OUTPUT);   // Pin 9 provides the voltage step
+  pinMode(led_pin, OUTPUT);  // Set LED pin as output
+  Serial.begin(9600);
+  }
 
+void loop() {
+  result = tx_rx();
+  Serial.println(result);
+                
+if (result > THRESHOLD) {
+  digitalWrite(led_pin, HIGH);  // Turn on LED if threshold is exceeded
+  } 
+  else {
+    digitalWrite(led_pin, LOW);   // Turn off LED otherwise
+    }
+                
+    delay(100);  // Short delay to avoid flickering
+   }
+                
+long tx_rx() {  
+  int read_high;
+  int read_low;
+  int diff;
+  long int sum;
+  int N_samples = 100;  // Number of samples to take
+  sum = 0;
+                
+for (int i = 0; i < N_samples; i++) {
+  digitalWrite(tx_pin, HIGH);              
+  read_high = analogRead(analog_pin);     
+  delayMicroseconds(100);                 
+  digitalWrite(tx_pin, LOW);               
+  read_low = analogRead(analog_pin);      
+  diff = read_high - read_low;            
+  sum += diff;                            
+  }
+return sum;
+}
+              
+              </code>
+            </pre>
+          </figure>
+          </div>
+      </div>
+      <div class="slide">
+
+        <div class="textcontainer">
+          <h2>Part 2: Sensor</h2>
+
+    </div>
+  </div>
+  <div class="slide">
+
+    <div class="textcontainer">
+      <h2>Part 3: CAD Files for CNC Milling</h2>
+
+</div>
+</div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+ document.addEventListener("DOMContentLoaded", function() {
+    let slides = document.querySelectorAll(".slide");
+    let dots = document.querySelectorAll(".dot");
+    let currentIndex = 0;
+
+    function updateSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+            dots[i].classList.toggle("active", i === index);
+        });
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", function() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlide(currentIndex);
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", function() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlide(currentIndex);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", function() {
+            currentIndex = i;
+            updateSlide(currentIndex);
+        });
+    });
+});
+  </script>
 </div>
 </body>
 

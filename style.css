@@ -241,18 +241,16 @@ p, a {
 
 /* Ensure Header is Above the Slides */
 .slider-container {
-  display: flex;
-  flex-direction: column; /* Arrange header above slides */
-  align-items: left; /* Center everything */
-  justify-content: left;
-  position: relative;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1000px; /* Adjust based on your layout */
+  min-height: 500px; /* Ensure enough space */
   margin: auto;
-  overflow: hidden;
-  background-color: #111;
   padding: 20px;
+  background-color: #111;
   border-radius: 10px;
 }
+
+
 
 /* Ensure Slides Display Correctly */
 .text-slider {
@@ -262,16 +260,18 @@ p, a {
 
 /* Individual Slide */
 .slide {
-  display: none;
-  flex: 0 0 100%;
-  text-align: left;
-  color: #ffffff;
+  display: none; /* Hide all slides by default */
+  width: 100%;
+  min-height: 400px; /* Adjust height if needed */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding doesn’t shrink the size */
+  overflow: auto; /* Prevents hidden content */
 }
 
-/* Active Slide */
 .slide.active {
-  display: block;
+  display: block; /* Only show active slide */
 }
+
 .slider-dots {
   display: flex;
   justify-content: center;
