@@ -62,16 +62,23 @@
     </div>
     <button id="nextBtn" class="arrow-button">&#10095;</button>
   </div>
+  <div class="slide">
+    <div class="textcontainer">
+      <h2>Part 1: Sensor Measuring Physical Quantity</h2>
+      
+</div>
+</div>
+
   <div class="text-slider">
       <div class="slide active">
           <div class="textcontainer">
-            <h2>Part 1: Capacitive Sensor, Petal Pressed Signaler</h2>
-            I wanted to create a capacitive sensor that when pressed could turn on an LED, signalling that there was a change in pressure. This could be used for a step petal, if a petal is pressed a light flickers off, creating a visual signal that the petal has been pressed.
+            <h2>Part 2: Capacitive Sensor, Petal Pressed Signaler</h2>
+            I wanted to create a capacitive sensor that, when pressed could turn on an LED, signalling that there was a change in pressure. This could be used for a step petal, if a petal is pressed a light flickers off, creating a visual signal that the petal has been pressed.
             <br>
             <br>
            <center><img src="squeeze1.gif" style="width:750px"></center> 
            <br>
-           Here, you can see that the sensor is printing an updated description of the change in voltage in arbritrary numbers. We can see that when the sensor is touched, the arbritrary updated voltage becomes very small and usually negative. Then, when the voltage drop is large, the LED will turn off temporarily.
+           Here, you can see that the sensor is printing an updated description of the change in voltage in arbritrary numbers. We can see that when the sensor is touched, the arbritrary updated voltage becomes very small and usually negative. Then, when the voltage drop is large, the LED will turn off temporarily, signalling that the petal has been pressed.
            <hr>
            This was the code I used in Arduino IDE: 
            <figure>
@@ -129,13 +136,7 @@ return sum;
           </figure>
           </div>
       </div>
-      <div class="slide">
-
-        <div class="textcontainer">
-          <h2>Part 2: Sensor</h2>
-
-    </div>
-  </div>
+  
   <div class="slide">
 
     <div class="textcontainer">
