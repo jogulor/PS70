@@ -53,7 +53,55 @@
 
 <center><h2> Windmill, Powered by a Computer<h2></center>
 
+<p>I decided to keep it simple this week and create an Arduino-powered version of a kinetic sculpture of a windmill. This windmill is powered by a DC motor and simple Arduino code from the PS70 website. I used a lot of Fusion 360 and sketched out a quick dimension plan.</p>
+<center><img src="quick.png" style="width:500px"><img src="quick2.png" style="width:500px"></center>
+<p>With help from classmates, I learned to design a slot that fits the DC motor tab perfectly on Fusion 360. Here are all of the needed parts:</p>
+<center><img src="partsneeded.png" style="width: 500px"></center>
+<p>Before printing, I did the wiring for the Arduino.</p>
+<center><img src="wiring1.png" style="height:500px"></center>
+<p>I utilized the code from the PS70 website.</p>
+<figure>
+  <pre>
+    <div class="code">
+const int A1A = D5;  // define pin 12 for A-1A 
+const int A1B = D6;  // define pin 14 for A-1B 
 
+void setup() {
+  pinMode(A1A, OUTPUT);     // specify these pins as outputs
+  pinMode(A1B, OUTPUT);
+  digitalWrite(A1A, LOW);   // start with the motors off 
+  digitalWrite(A1B, LOW);
+}
+
+void loop() {
+  // start the motor 
+  digitalWrite(A1A, HIGH);   
+  digitalWrite(A1B, LOW);
+  delay(30000);             // allow the motor to run for 30 seconds
+
+  // stop the motor
+  digitalWrite(A1A, LOW);   // setting both pins LOW stops the motor 
+  digitalWrite(A1B, LOW);   // redundant, but doesn't hurt 
+  delay(2000);              // keep the motor off for 2 seconds
+}
+    </code>
+  </pre>
+</figure>
+<p>Then, I hit the laser cutter, printed out all my parts and started to assemble. Here's what we ended up with!</p>
+<center><img src="windmill.png" style="width:500px">
+<br>
+  <video width="500px" height="400px" controls style="transform: rotate(180deg);">
+      <source src="verycute.mp4" type="video/mp4">
+  </video>
+
+
+  <video width="500px" height="400px" controls style="transform: rotate(180deg);">
+      <source src="cute.mp4" type="video/mp4">
+  </video>
+</center>
+
+
+<br>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
