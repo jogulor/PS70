@@ -18,7 +18,8 @@ h1, h2, h3, h4, h5, h6, .nav-title {
     font-family: 'Jost', sans-serif;
     font-weight: 600; /* SemiBold */
     color: #00bd00;
-    align: left
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 /* Navbar */
@@ -78,6 +79,7 @@ p, a {
     color: #ffffff;
     margin-left: 100px;
     margin-right: 100px;
+    
 }
 
 /* Button Styling */
